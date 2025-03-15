@@ -30,12 +30,12 @@ function Task({ task, onUpdate, onDelete }: Props) {
       </div>
       <div className="flex flex-col items-center justify-center gap-2">
         <div
-          className={`w-35 bg-gray-800 p-2 rounded-md text-center   ${
+          className={`w-35 p-2 rounded-md text-center border ${
             task.status === "done"
-              ? "bg-green-900"
+              ? "border-green-900 text-green-400"
               : task.status === "in-progress"
-              ? "bg-orange-200/50"
-              : "bg-gray-700"
+              ? "border-orange-200/50 text-orange-200"
+              : "border-gray-700 text-gray-400"
           }`}
         >
           {task.status}

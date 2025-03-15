@@ -63,7 +63,7 @@ function UpdateTaskDialog({ task, isOpen, closeFn, onSuccess }: Props) {
       }}
       onClick={(e) => handleBackdropClick(e)}
     >
-      <div className="flex flex-col gap-5 size-full w-[650px] h-[400px] px-8 py-6">
+      <div className="flex flex-col gap-5 max-w-full max-h-full w-[700px] h-[400px] px-3 sm:px-8 py-6">
         <span className="text-center text-3xl">Update task</span>
         <input
           type="text"
@@ -91,8 +91,11 @@ function UpdateTaskDialog({ task, isOpen, closeFn, onSuccess }: Props) {
         </select>
         <button
           type="submit"
-          className="mt-3 text-[1.4rem] bg-gray-600 p-2 rounded-md hover:bg-gray-700 active:bg-gray-700 transition"
+          className="mt-3 text-[1.4rem] bg-gray-600 p-2 rounded-md hover:bg-gray-700 active:bg-gray-700 transition disabled:brightness-75"
           onClick={(e) => handleSubmit(e)}
+          disabled={
+            title.trim().length === 0 || description.trim().length === 0
+          }
         >
           Confirm
         </button>

@@ -47,7 +47,7 @@ export default function Home() {
   };
 
   return (
-    <div className="p-8 pb-20 gap-16 sm:py-10 w-[700px]">
+    <div className="p-4 pb-20 gap-16 sm:py-10 w-[700px]">
       <div className="flex gap-3 items-center">
         <span className="text-2xl flex-1 overflow-hidden text-ellipsis">
           {user?.name}

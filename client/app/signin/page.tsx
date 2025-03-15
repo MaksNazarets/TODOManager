@@ -44,7 +44,7 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="flex flex-col justify-center gap-5 w-[400px]">
+    <div className="flex flex-col justify-center gap-5 w-[400px] p-3 md:p-0">
       <h1 className="text-center text-3xl">Sign In</h1>
       <form onSubmit={handleRegister} className="flex flex-col gap-2">
         <input
