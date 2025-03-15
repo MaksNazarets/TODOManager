@@ -26,6 +26,18 @@ router.post("/update", authMiddleware, async (req, res) => {
 
   const taskRepo = AppDataSource.getRepository(Task);
 
+  if (!id || !title || !description || !status) {
+    res.status(400).json("All fields required");
+    console.error("All fields required");
+    return;
+  }
+
+  if (title.trim().length === 0 || description.trim().length === 0) {
+    res.status(400).json("All fields should have at least 1 character");
+    console.error("All fields should have at least 1 character");
+    return;
+  }
+
   try {
     const task = await taskRepo.findOne({
       where: { id },
@@ -82,9 +94,21 @@ router.post("/new", authMiddleware, async (req, res) => {
   const taskRepo = AppDataSource.getRepository(Task);
   const userRepo = AppDataSource.getRepository(User);
 
+  if (!title || !description || !status) {
+    res.status(400).json("All fields required");
+    console.error("All fields required");
+    return;
+  }
+
+  if (title.trim().length === 0 || description.trim().length === 0) {
+    res.status(400).json("All fields should have at least 1 character");
+    console.error("All fields should have at least 1 character");
+    return;
+  }
+
   try {
     const user = await userRepo.findOne({
-      where: { id: (req as any).user.id },
+      where: { id: (req as any).user.userId },
     });
 
     const newTask = taskRepo.create({
