@@ -14,4 +14,5 @@
      - DB_PASSWORD
      - DB_NAME
      - JWT_SECRET
+     - CLIENT_ORIGIN
 4. run `npm run dev` in terminal inside both client and server folders
