@@ -58,7 +58,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
-      {/* {!isUserFetched ? <center>Loading...</center> : children} */}
       {children}
     </AuthContext.Provider>
   );

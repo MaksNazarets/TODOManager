@@ -59,7 +59,7 @@ export default function Home() {
           Log out
         </button>
       </div>
-      <div className="flex flex-col gap-3 text-center text-2xl mt-7">
+      <div className="flex flex-col gap-3 text-center text-2xl mt-7 pb-16">
         <h2 className="font-bold">Your Tasks</h2>
         <div className="flex justify-between">
           <button
@@ -83,16 +83,22 @@ export default function Home() {
         </div>
         <ul>
           {tasks.length ? (
-            filteredTasks.map((t) => (
-              <Task
-                key={t.id}
-                task={t}
-                onDelete={() => deleteTask(t.id)}
-                onUpdate={() => setTaskToUpdate(t)}
-              />
-            ))
+            filteredTasks.length ? (
+              filteredTasks.map((t) => (
+                <Task
+                  key={t.id}
+                  task={t}
+                  onDelete={() => deleteTask(t.id)}
+                  onUpdate={() => setTaskToUpdate(t)}
+                />
+              ))
+            ) : (
+              <span className="text-center text-2xl text-gray-400">
+                No tasks {filter}
+              </span>
+            )
           ) : (
-            <span className="text-center text-xl">No tasks yet</span>
+            <span className="text-center text-2xl text-gray-400">No tasks yet</span>
           )}
         </ul>
       </div>
