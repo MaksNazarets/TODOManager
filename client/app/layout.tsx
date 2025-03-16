@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Alegreya_Sans, Alegreya_Sans_SC } from "next/font/google";
 import "./globals.css";
-import { AuthProvider } from "./utils/AuthContext";
+import { AuthProvider } from "./context/AuthContext";
 
 const alegreyaSans = Alegreya_Sans({
   variable: "--font-alegreya-sans",

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useAuth } from "./utils/AuthContext";
+import { useAuth } from "./context/AuthContext";
 import { Status, Task as TaskType } from "@/types";
 import Task from "@/components/Task";
 import AddTaskDialog from "@/components/AddTaskDialog";

@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import API from "./api";
+import API from "../utils/api";
 
 interface AuthContextType {
   user: { id: number; email: string; name: string } | null;
