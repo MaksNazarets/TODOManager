@@ -6,8 +6,8 @@ import "reflect-metadata";
 dotenv.config();
 
 import { AppDataSource } from "./data-source";
-import { router as userRouter } from "./Routes/userRouter";
-import { router as taskRouter } from "./Routes/taskRoute";
+import { router as userRouter } from "./routes/userRouter";
+import { router as taskRouter } from "./routes/taskRoute";
 
 const app = express();
 
@@ -15,10 +15,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.CLIENT_ORIGIN,
     credentials: true,
   })
-);
+); 
 
 app.use("/", userRouter);
 app.use("/tasks", taskRouter);
